@@ -13,14 +13,14 @@
 }
 .header{
     text-align: center;
-    background: orange;
+    background: yellowgreen
 }
 footer{
     text-align: center;
     background: yellow;
 }
 body{
-    background: brown;
+    background: lightblue;
 }
 .header nav a {
   margin-right: 15px; /* space between links */
@@ -30,4 +30,5 @@ body{
 
 .header nav a:hover {
   text-decoration: underline;
+  
 }
