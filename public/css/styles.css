@@ -22,3 +22,12 @@ footer{
 body{
     background: brown;
 }
+.header nav a {
+  margin-right: 15px; /* space between links */
+  text-decoration: none;
+  color: blue; /* optional, your link color */
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
