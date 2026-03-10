@@ -11,16 +11,17 @@ dotenv.config();
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", "views");
-app.set("layout","layout")
+app.set("layout", "layout")
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+// app.use(cors());
 
 app.use(
-  session({
-    secret: "secretkey",
-    resave: false,
-    saveUninitialized: false,
-  }),
+    session({
+        secret: "secretkey",
+        resave: false,
+        saveUninitialized: false,
+    }),
 );
 
 app.use("/", storeRouter);
@@ -29,10 +30,10 @@ app.use("/products", productRouter);
 // app.use("/users", userRouter);
 
 const startServer = async () => {
-  await dbConnect();
-  app.listen(5000, () => {
-    console.log("Server Started");
-  });
+    await dbConnect();
+    app.listen(5000, () => {
+        console.log("Server Started on port 5000");
+    });
 };
 
 startServer()
