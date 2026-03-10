@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-    <div class="header">
-        <h1>My website</h1>
-        <nav>
-            <a href="/home">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-            <a href="/menu">Menu</a>
-        </nav>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div>
+        <div class="header">
+            <h1>My Store</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li>Users</li>
+                <li>Login</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+        <div><%- body %></div>
+        <div class="footer">&copy; 2026. All rights reserved.</div>
     </div>
-    <%- body %>
-    <footer>
-    <h3>&copy;2026.All rights reserved.</h3>
-    </footer>
-</body>
+  </body>
 </html>
