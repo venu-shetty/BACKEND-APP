@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>User Edit Form</h2>
-    <form action="/users/edit/<%= user._id %>" method="POST">
+    <form action="/users/edit/<%= user._id %>/save" method="POST">
         <p>
             <input type="text" name="name" value="<%= user.name %>" placeholder="Name" required>
         </p>

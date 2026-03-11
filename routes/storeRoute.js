@@ -26,4 +26,4 @@ storeRouter.get("/menu", (req, res) => {
 // Root route ("/") shows products
 storeRouter.get("/", showProducts)
 
-export { storeRouter }
+export default  storeRouter; 
