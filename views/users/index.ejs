@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Page</title>
+</head>
+<body>
+    <h2>Users Admin Page</h2>
+<a href="/users/add">Add User</a>
+
+<div class="users-container">
+  <% users.forEach(user => { %>
+    <div class="user-box" style="border:1px solid #ccc; padding:10px; margin:10px;">
+      <p><strong>Name:</strong> <%= user.name %></p>
+      <p><strong>Email:</strong> <%= user.email %></p>
+      <p><strong>Password:</strong> <%= user.password %></p>
+      <p><strong>Role:</strong> <%= user.role %></p>
+      
+      <p>
+        <a href="/users/edit/<%= user._id %>">Edit</a> |
+        <a href="/users/delete/<%= user._id %>" onclick="return confirm('Delete user?')">Delete</a>
+      </p>
+    </div>
+  <% }) %>
+</div>
+</body>
+</html>
