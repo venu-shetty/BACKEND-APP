@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>edit Order Form</h1>
+    <form action="/orders/<%= order._id %>?_method=PUT" method="POST">
+        <label for="user">User:</label>
+        <select name="user" id="user">
+            <% users.forEach(user => { %>
+                <option value="<%= user._id %>" <%= user._id.toString() === order.user._id.toString() ? 'selected' : '' %>><%= user.name %></option>
+            <% }); %>
+        </select>
+        <div id="products-container">
+            <% order.products.forEach((item, index) => { %>
+                <div class="product-item">
+                    <label for="product-<%= index %>">Product:</label>
+                    <select name="products[<%= index %>][product]" id="product-<%= index %>">
+                        <% products.forEach(product => { %>
+                            <option value="<%= product._id %>" <%= product._id.toString() === item.product._id.toString() ? 'selected' : '' %>><%= product.name %></option>
+                        <% }); %>
+                    </select>
+                    <label for="quantity-<%= index %>">Quantity:</label>
+                    <input type="number" name="products[<%= index %>][quantity]" id="quantity-<%= index %>" value="<%= item.quantity %>">
+                </div>
+            <% }); %>
+        </div>
+        <button type="submit">Update Order</button>
+    </form>
+
+    
+</body>
+</html>

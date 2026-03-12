@@ -1,0 +1,10 @@
+import express from "express";
+import{getorder,addorder,addorderForm,deleteorder,editorderForm,saveorder} from "../controllers/orderController.js";
+const orderRouter = express.Router();
+orderRouter.get("/", getorder);
+orderRouter.get("/add", addorderForm);
+orderRouter.post("/add", addorder);
+orderRouter.get("/delete/:id", deleteorder);
+orderRouter.get("/edit/:id", editorderForm);
+orderRouter.post("/edit/:id", saveorder);
+export default orderRouter; 
