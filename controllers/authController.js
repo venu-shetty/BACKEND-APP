@@ -74,7 +74,7 @@ const signup = async (req, res) => {
   }
 };
 
-// Signin API (updated)
+// Signin API
 const signin = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -90,7 +90,6 @@ const signin = async (req, res) => {
       // Wrong password
       return res.status(401).json({ error: "Invalid password" });
     }
-
     // Successful login
     res.status(200).json(user);
   } catch (err) {
@@ -98,7 +97,6 @@ const signin = async (req, res) => {
     res.status(500).json({ error: "Something went wrong" });
   }
 };
-
 // Logout
 const logout = (req, res) => {
   req.session.destroy();
