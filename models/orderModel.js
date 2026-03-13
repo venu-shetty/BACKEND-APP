@@ -1,9 +1,27 @@
-import mongoose from "mongoose";
+import express from "express";
+import {
+  getOrders,
+  addOrderForm,
+  addOrder,
+  editOrderForm,
+  saveOrder,
+  deleteOrder,
+  getOrdersJSON,
+  addOrderJSON
+} from "../controllers/orderController.js";
 
-const orderSchema = new mongoose.Schema({
-  customerName: { type: String, required: true },
-  product: { type: String, required: true },
-  quantity: { type: Number, required: true }
-});
+const orderRouter = express.Router();
 
-export default mongoose.model("Order", orderSchema);
+// EJS Admin routes
+orderRouter.get("/", getOrders);
+orderRouter.get("/add", addOrderForm);
+orderRouter.post("/", addOrder);
+orderRouter.get("/:id/edit", editOrderForm);
+orderRouter.post("/:id", saveOrder);
+orderRouter.get("/delete/:id", deleteOrder);
+
+// JSON API routes for React
+orderRouter.get("/api/orders", getOrdersJSON);
+orderRouter.post("/api/orders", addOrderJSON);
+
+export default orderRouter;
