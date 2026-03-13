@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Orders Admin Page</h2>
+<a href="/orders/add">Add Order</a>
+<div class="orders-container">
+  <% orders.forEach(order => { %>
+    <div class="order-box" style="border:1px solid #ccc; padding:10px; margin:10px;">
+      <p><strong>Customer Name:</strong> <%= order.customerName %></p>
+      <p><strong>Product:</strong> <%= order.product %></p>
+      <p><strong>Quantity:</strong> <%= order.quantity %></p>
+      
+      <p>
+        <a href="/orders/edit/<%= order._id %>">Edit</a> |
+        <a href="/orders/delete/<%= order._id %>" onclick="return confirm('Delete order?')">Delete</a>
+      </p>
+    </div>
+  <% }) %>  
+</body>
+</html>
